@@ -1,0 +1,72 @@
+<br>
+<form class="form" enctype="multipart/form-data" [formGroup]="dadosVinho">
+    <div class="row">
+        <mat-form-field color="primary">
+            <mat-label>Nome do vinho</mat-label>
+            <input matInput formControlName="nome">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <mat-form-field color="primary">
+                <mat-label>Vinícola</mat-label>
+                <input matInput formControlName="vinicola">
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <mat-form-field color="primary">
+                <mat-label>País de origem</mat-label>
+                <input matInput formControlName="pais_origem">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <mat-form-field color="primary">
+                <mat-label>Tipo de vinho</mat-label>
+                <mat-select formControlName="tipo_vinho">
+                    <mat-option *ngFor="let v of vinhos" value="{{v.id}}">{{v.nome}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <mat-form-field color="primary">
+                <mat-label>Tipo de uva ou blend</mat-label>
+                <mat-select multiple formControlName="tipo_uva">
+                    <mat-option *ngFor="let u of uvas" value="{{u.id}}">{{u.nome}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-form-field color="primary">
+            <mat-label>Harmonização com comidas</mat-label>
+            <mat-select multiple formControlName="harmonizacao">
+                <mat-option *ngFor="let h of harmonizacoes" value="{{h.id}}">{{h.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-label class="label">Rótulo da garrafa</mat-label>
+        <input type="file" class="file-input" formControlName="rotulo" (change)="onFileSelected($event)" #fileUpload>
+
+        <div class="file-upload">
+            <button mat-mini-fab color="primary" class="upload-btn"
+            (click)="fileUpload.click()">
+                <mat-icon>attach_file</mat-icon>
+            </button>&nbsp;&nbsp;
+            {{fileName || "Nenhum arquivo selecionado."}}
+        </div>
+    </div>
+</form>
+
+<div class="row line">
+    <button class="btnFechar" (click)="dismiss()">Cancelar</button>&nbsp;
+    <button class="btnContinuar" (click)="cadastrar()">Continuar</button>
+</div>

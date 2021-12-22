@@ -1,0 +1,48 @@
+.form {
+    max-width: 90%;
+    display: block;
+    margin: auto;
+}
+
+.btnFechar {
+    float: right;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 0;
+    background: lightgray;
+    height: 35px;
+    max-width: fit-content;
+    margin: 1%;
+}
+
+.btnContinuar {
+    float: right;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 0;
+    background: rgb(76, 177, 76);
+    height: 35px;
+    max-width: fit-content;
+    margin: 1%;
+}
+
+.pass {
+    text-align: right;
+    font-size: small;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.new {
+    text-align: center;
+    font-size: small;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
